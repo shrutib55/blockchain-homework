@@ -97,7 +97,7 @@ To do this, you will create and submit four deliverables:
 
     * ./geth --datadir node2/ --port 0  --bootnodes 'enode://8858450562f634131b81d701d8bc932cc1cc27b11b0c4be1ab2794c20ddf9fcd1a8957641802f08b79dd0b6b859b30b31ee06608f902daebe7cf56216aa50567@127.0.0.1:35555'
     
-### Test Transactiom
+### Test Transaction
 
 1- Use the MyCrypto wallet to connect to the node with the exposed RPC port.
 
