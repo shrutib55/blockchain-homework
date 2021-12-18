@@ -82,7 +82,7 @@ To do this, you will create and submit four deliverables:
 
    Export genesis configurations.
    
-   Use Ctrl + C to exet puppeth. 
+   Use Ctrl + C to exit puppeth. 
 
 6- Initialize node with the exported network name
     
