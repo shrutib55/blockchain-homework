@@ -50,7 +50,7 @@ To do this, you will create and submit four deliverables:
     * mkdir node1 
     * mkdir node2
     
-    <img width="428" alt="Screen Shot 2021-12-18 at 12 36 22 PM" src="https://user-images.githubusercontent.com/88411429/146652662-2cca046a-4c06-410e-baf2-089121dc6e7e.png">
+![image](/Users/shbinding/Desktop/Screen Shot 2021-12-18 at 12.36.22 PM.png)
 
 
 2- Create accounts for two nodes for the network with a separate `datadir` for each using `geth`.
