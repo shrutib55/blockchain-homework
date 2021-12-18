@@ -49,9 +49,6 @@ To do this, you will create and submit four deliverables:
 
     * mkdir node1 
     * mkdir node2
-    
-![image](/Users/shbinding/Desktop/Screen Shot 2021-12-18 at 12.36.22 PM.png)
-
 
 2- Create accounts for two nodes for the network with a separate `datadir` for each using `geth`.
 
@@ -62,5 +59,57 @@ To do this, you will create and submit four deliverables:
 
     * echo 'node1' > node1/password.txt
     * echo 'node2' > node2/password.txt
-    * echo 'DFA75550A43F59590966A4F2AE0D9Af2d43DC8DE' >> accounts.txt
-    * echo '648Ac0ab0D9bA0e692C8A9104e7fb004fD05a0b2' >> accounts.txt
+    * echo 'f5bA60DDCC7b1Dd2B363eD0117700543C94645f1' >> accounts.txt
+    * echo '9ad665A8155887F4aced7Fd15f1A22aD532901E3' >> accounts.txt
+
+4- Run `puppeth`, name your network, and select the option to configure a new genesis block. 
+
+   Choose the `Clique (Proof of Authority)` consensus algorithm. 
+
+   Paste both account addresses from the first step one at a time into the list of accounts to seal.
+
+   Paste them again in the list of accounts to pre-fund.
+
+
+--- Network Name: bcnet
+   
+--- Network ID : 889
+
+    * ./puppeth
+    
+    
+5- Choose the `Manage existing genesis` option.
+
+   Export genesis configurations.
+   
+   Use Ctrl + C to exet puppeth. 
+
+6- Initialize node with the exported network name
+    
+    * ./geth init bcnet.json --datadir node1
+    * ./geth init bcnet.json --datadir node2
+   
+7- Run the first node, unlock the account, enable mining, and the RPC flag. Only one node needs RPC enabled.
+
+    * ./geth --datadir node1/ --mine --miner.threads 1 --unlock 'f5bA60DDCC7b1Dd2B363eD0117700543C94645f1' --password node1/password.txt --rpc.allow-unprotected-txs       --allow-insecure-unlock --port "35555" 
+    
+8- Set a different peer port for the second node and use the first node's `enode` address as the `bootnode` flag.
+
+    * ./geth --datadir node2/ --port 0  --bootnodes 'enode://8858450562f634131b81d701d8bc932cc1cc27b11b0c4be1ab2794c20ddf9fcd1a8957641802f08b79dd0b6b859b30b31ee06608f902daebe7cf56216aa50567@127.0.0.1:35555'
+    
+### Test Transactiom
+
+1- Use the MyCrypto wallet to connect to the node with the exposed RPC port.
+
+   You will need to use a custom network, and include the chain ID, and use ETH as the currency.
+   
+   
+   
+   
+------------------------------------------------------------------------------------------------------------------------------------------------------------------   
+   
+*** Unfortunately, my MyCrypto wallet was unable to connect to the custom network. I have been told that many people with Macs faced this issue, but after 2 days of troubleshooting with my tutor, instructor, and the internet... this issue still was unable to be resolved. ***
+
+
+
+
